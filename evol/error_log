@@ -1,0 +1,2 @@
+[14-Jul-2014 09:19:29 America/New_York] PHP Fatal error:  Call to undefined function get_header() in /home/cowboybe/public_html/wp-content/themes/evol/index.php on line 1
+[20-Feb-2015 07:14:17 America/New_York] PHP Fatal error:  Call to undefined function get_header() in /home5/cowboybe/public_html/wp-content/themes/evol/index.php on line 1

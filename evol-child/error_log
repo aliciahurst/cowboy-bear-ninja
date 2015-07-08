@@ -1,0 +1,10 @@
+[29-May-2014 19:24:21 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home3/aliciah/public_html/ninja/wp-content/themes/evol-child/functions.php on line 7
+[29-May-2014 19:25:24 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home3/aliciah/public_html/ninja/wp-content/themes/evol-child/functions.php on line 7
+[29-May-2014 19:27:24 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home3/aliciah/public_html/ninja/wp-content/themes/evol-child/functions.php on line 7
+[29-May-2014 19:27:26 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home3/aliciah/public_html/ninja/wp-content/themes/evol-child/functions.php on line 7
+[29-May-2014 19:30:47 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home3/aliciah/public_html/ninja/wp-content/themes/evol-child/functions.php on line 7
+[29-May-2014 19:30:48 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home3/aliciah/public_html/ninja/wp-content/themes/evol-child/functions.php on line 7
+[29-May-2014 19:31:54 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home3/aliciah/public_html/ninja/wp-content/themes/evol-child/functions.php on line 7
+[29-May-2014 19:39:53 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home3/aliciah/public_html/ninja/wp-content/themes/evol-child/functions.php on line 7
+[29-May-2014 19:40:10 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home3/aliciah/public_html/ninja/wp-content/themes/evol-child/functions.php on line 7
+[30-May-2014 09:32:57 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home3/aliciah/public_html/ninja/wp-content/themes/evol-child/index.php on line 1
