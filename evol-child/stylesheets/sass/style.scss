@@ -527,6 +527,19 @@ blockquote {
 	}
 }
 
+.dir-portfolio {
+	  margin: 0 35px 35px 0;
+	h2 {
+		  margin-top: 10px;
+  			margin-bottom: 7px;
+  			text-align: left;
+	}
+	p {
+		  margin-top: 0;
+  	line-height: 170%;
+	}
+}
+
 // Portfolio
 // --------------------------------------------------------------
 
@@ -1268,4 +1281,3 @@ input:focus:-moz-placeholder { color:transparent; }
 		margin-top: 30px;
 	}
 }
-
