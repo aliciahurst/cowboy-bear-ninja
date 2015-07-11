@@ -1,4 +1,3 @@
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
 	<?php
@@ -47,15 +46,10 @@
 				<li class="post-nav-right"><?php if ( get_adjacent_post( false, '', true ) ) { previous_post_link( '%link', '' . __( 'Next Post', 'themerain' ) . ' <i class="fa-chevron-right"></i>' ); } else { echo '' . __( 'Next Post', 'themerain' ) . ' <i class="fa-chevron-right"></i>'; }; ?></li>
 			</ul>
 		</div>
-
+		
 	<?php else :
 		
 		if ( has_post_thumbnail() ) { ?>
-			<header class="entry-header">
-			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-			<div class="entry-meta"><?php the_time( 'M j, Y' ); ?> / <?php the_category(', '); ?> / <?php comments_popup_link(); ?></div>
-			</header>
-
 			<div class="entry-media entry-thumb">
 				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 					<?php the_post_thumbnail(); ?>
@@ -81,10 +75,14 @@
 		};
 		?>
 		
+		<header class="entry-header">
+			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<div class="entry-meta"><?php the_time( 'M j, Y' ); ?> / <?php the_category(', '); ?> / <?php comments_popup_link(); ?></div>
+		</header>
 		
+		<div class="clearfix"><?php the_excerpt(); ?></div>
 		
-		<div class="clearfix"><?php the_content(''); ?></div>
-		
+		<p class="entry-more"><a class="button small" href="<?php the_permalink(); ?>"><?php _e( 'Read More', 'themerain' ); ?></a></p>
 	<?php endif; ?>
 	
 </article>

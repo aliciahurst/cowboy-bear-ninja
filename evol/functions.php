@@ -173,7 +173,7 @@ function tr_portfolio() {
 	$args = array(
 		'labels' => $labels,
 		'public' => true,
-		'exclude_from_search' => false,
+		'exclude_from_search' => true,
 		'publicly_queryable' => true,
 		'show_ui' => true, 
 		'query_var' => true,

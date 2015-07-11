@@ -12,7 +12,7 @@ get_header(); ?>
 					the_content();
 				endwhile; ?>
 				<?php $tr_portfolio_filter = ot_get_option( 'tr_portfolio_filter', 'yes' ); if ( $tr_portfolio_filter != 'no' ) { ?>
-					<div id="filter"> Test
+					<div id="filter">
 						<ul>
 							<li><a class="active" href="#" value="*"><?php _e( 'All', 'themerain' ); ?></a></li>
 							<?php

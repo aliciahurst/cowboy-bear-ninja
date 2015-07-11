@@ -147,21 +147,29 @@ h4 {
 
 
 #page-header .inner h1 {
-	
 
-	margin-top: 90px;
+	//margin-top: 90px;
+	margin-top: auto;
 	text-align: center;
 	width: auto;
-	font-family: $opencondensed;
-	font-size: 48px;
-	font-weight: 300;
+	//font-family: $opencondensed;
+	font-size: 100px;
+	//font-weight: 600;
 	text-transform: uppercase;
 	padding: 0 0px;
 	line-height: 75px;
 	.box {
-		border-bottom: 4px solid $white;
+		//border-bottom: 4px solid $white;
 		padding: 0 40px;
 	}
+	.home &  {
+		visibility: hidden;
+	}
+	padding-top: 75px;
+	padding-bottom: 38px;
+	font-family: $ticketbook;
+	letter-spacing: 2px;
+	@include transform(rotate(-3deg));
 }
 
 .page-template-template-home-php #header h1 {
@@ -603,8 +611,8 @@ h6 {
 	@extend .blue-heading;
 	background-color: white;
 	color: #444;
-	border: 1px solid #444;
-	font-size: em(20);
+	//border: 1px solid #444;
+	font-size: em(24);
 	text-align: center;
 	padding: 5px 0;
 	margin-top: 10px;
@@ -1185,11 +1193,11 @@ input:focus:-moz-placeholder { color:transparent; }
 		}
 	}
 	#page-header .inner h1 {
-		font-size: 30px;
+		font-size: 40px;
 		line-height: 41px;
 		padding-top: 35px;
 		.box {
-			border-bottom: 2px solid $white;
+			//border-bottom: 2px solid $white;
 			padding: 0;
 		}
 	}
@@ -1282,4 +1290,70 @@ input:focus:-moz-placeholder { color:transparent; }
 	}
 }
 
+// New stuff
 
+body {
+	overflow-x: hidden;
+}
+
+#header {
+	position: relative;
+	//margin-bottom: 50px;
+	&:after {
+		position: absolute;
+		content: "";
+		  -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+    -webkit-transform-origin: 3% 0;
+    transform-origin: 3% 0;
+    bottom: -100px;
+    left: -25%;
+    z-index: -1;
+    width: 150%;
+    height: 100px;
+    background: white;
+	}
+	#page-header {
+		//padding-bottom: 100px;
+	}
+}
+
+.twocolumn {
+	@media all and (min-width: 800px) {
+		  position: relative;
+  margin-bottom: 48px;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 15px;
+  -moz-column-gap: 15px;
+  column-gap: 15px;
+  padding: 20px 0;
+  p {
+  	font-size: 16px;
+  	line-height: 1.4;
+  	opacity: 0.8;
+  	padding: 0 10px;
+  }
+	}
+}
+
+// .top-wrap {
+// 	position: relative;
+// 	margin-bottom: 50px;
+// 	background: white;
+// 	&:after {
+// 		position: absolute;
+// 		content: "";
+// 		  -webkit-transform: rotate(-3deg);
+//     transform: rotate(-3deg);
+//     -webkit-transform-origin: 3% 0;
+//     transform-origin: 3% 0;
+//     bottom: -100px;
+//     left: -25%;
+//     z-index: -1;
+//     width: 150%;
+//     height: 100px;
+//     background: white;
+// 	}
+// }

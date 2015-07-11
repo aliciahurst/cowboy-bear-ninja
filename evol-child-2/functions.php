@@ -66,15 +66,15 @@ function tr_widgets_init_2() {
 add_action( 'widgets_init', 'tr_widgets_init_2' );
 
 
-function fb_add_search_box ( $items, $args ) {
+// function fb_add_search_box ( $items, $args ) {
     
-    // only on primary menu
-    if( 'primary' === $args -> theme_location )
-        $items .= '<li class="menu-item menu-item-search">' . get_search_form( FALSE ) . '</li>';
+//     // only on primary menu
+//     if( 'primary' === $args -> theme_location )
+//         $items .= '<li class="menu-item menu-item-search">' . get_search_form( FALSE ) . '</li>';
     
-    return $items;
-}
-add_filter( 'wp_nav_menu_items', 'fb_add_search_box', 10, 2 );
+//     return $items;
+// }
+// add_filter( 'wp_nav_menu_items', 'fb_add_search_box', 10, 2 );
 
 // Callback function to insert 'styleselect' into the $buttons array
 function my_mce_buttons_2( $buttons ) {

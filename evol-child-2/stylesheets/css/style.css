@@ -92,18 +92,26 @@ h4 {
     line-height: 1.875em; }
 
 #page-header .inner h1, #page-header .inner .frontpg {
-  margin-top: 90px;
+  margin-top: auto;
   text-align: center;
   width: auto;
-  font-family: "Open Sans Condensed", "Arial Narrow", Helvetica, Arial, sans-serif;
-  font-size: 48px;
-  font-weight: 300;
+  font-size: 100px;
   text-transform: uppercase;
   padding: 0 0px;
-  line-height: 75px; }
+  line-height: 75px;
+  padding-top: 75px;
+  padding-bottom: 38px;
+  font-family: "ticketbookmedium", Futura, Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  letter-spacing: 2px;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  transform: rotate(-3deg); }
   #page-header .inner h1 .box, #page-header .inner .frontpg .box {
-    border-bottom: 4px solid #ffffff;
     padding: 0 40px; }
+  .home #page-header .inner h1, .home #page-header .inner .frontpg {
+    visibility: hidden; }
 
 .page-template-template-home-php #header h1, .page-template-template-home-php #header .frontpg {
   visibility: hidden; }
@@ -403,8 +411,7 @@ blockquote {
 h6 {
   background-color: white;
   color: #444;
-  border: 1px solid #444;
-  font-size: 1.25em;
+  font-size: 1.5em;
   text-align: center;
   padding: 5px 0;
   margin-top: 10px; }
@@ -856,11 +863,10 @@ input:focus:-moz-placeholder {
       width: 100%; }
 
   #page-header .inner h1, #page-header .inner .frontpg {
-    font-size: 30px;
+    font-size: 40px;
     line-height: 41px;
     padding-top: 35px; }
     #page-header .inner h1 .box, #page-header .inner .frontpg .box {
-      border-bottom: 2px solid #ffffff;
       padding: 0; }
 
   .page-id-12 h2 {
@@ -932,5 +938,40 @@ input:focus:-moz-placeholder {
 
   #page-header .inner h1, #page-header .inner .frontpg {
     margin-top: 30px; } }
+body {
+  overflow-x: hidden; }
+
+#header {
+  position: relative; }
+  #header:after {
+    position: absolute;
+    content: "";
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+    -webkit-transform-origin: 3% 0;
+    transform-origin: 3% 0;
+    bottom: -100px;
+    left: -25%;
+    z-index: -1;
+    width: 150%;
+    height: 100px;
+    background: white; }
+
+@media all and (min-width: 800px) {
+  .twocolumn {
+    position: relative;
+    margin-bottom: 48px;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 15px;
+    -moz-column-gap: 15px;
+    column-gap: 15px;
+    padding: 20px 0; }
+    .twocolumn p, .twocolumn .split li, .split .twocolumn li {
+      font-size: 16px;
+      line-height: 1.4;
+      opacity: 0.8;
+      padding: 0 10px; } }
 
 /*# sourceMappingURL=style.css.map */

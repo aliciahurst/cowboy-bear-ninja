@@ -1,6 +1,4 @@
 <article id="post-0">
-	<div class="one-half">
-	<h6>Not Found</h6>
 	<p>
 		<?php
 		if ( is_search() ) {
@@ -12,13 +10,5 @@
 		}
 		?>
 	</p>
-	</div>
-	<div class="one-half last">
-	<h6> Search </h6>
-	<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-        <input type="text" value="" name="s" id="s" />
-        <input type="submit" id="searchsubmit" value="Search" />
-</form>
-</div>
-
+	<?php get_search_form(); ?>
 </article>

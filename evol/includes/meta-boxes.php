@@ -107,7 +107,7 @@ function custom_meta_boxes() {
   	'id'        => 'metabox_portfolio',
   	'title'     => 'Portfolio Settings',
   	'desc'      => '',
-  	'pages'     => array( 'portfolio', 'hidden'),
+  	'pages'     => array( 'portfolio' ),
   	'context'   => 'normal',
   	'priority'  => 'high',
   	'fields'    => array(
