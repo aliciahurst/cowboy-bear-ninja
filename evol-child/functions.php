@@ -159,3 +159,27 @@ function vc_remove_wp_ver_css_js( $src ) {
 }
 add_filter( 'style_loader_src', 'vc_remove_wp_ver_css_js', 9999 );
 add_filter( 'script_loader_src', 'vc_remove_wp_ver_css_js', 9999 );
+
+
+// Admin area favicons
+
+function show_favicon() {
+$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+$uri = get_theme_root_uri();
+    if (strpos($url,'staging') !== false) {
+        echo '<link href="'. $uri .'/evol-child/images/favicon_staging.png" rel="icon" type="image/png">';
+    } 
+    elseif (strpos($url,'dev') !== false) {
+        echo '<link href="'. $uri .'/evol-child/images/favicon_local.png" rel="icon" type="image/png">';
+    } 
+    else {
+        echo '<link href="'. $uri .'/evol-child/images/favicon_live.png" rel="icon" type="image/png">';
+    }
+}
+add_action('admin_head', 'show_favicon');
+
+// Auto update plugins
+add_filter('auto_update_plugin', '__return_true');
+
+// Don't update WP with nightly builds
+add_filter( 'allow_dev_auto_core_updates', '__return_false' );
