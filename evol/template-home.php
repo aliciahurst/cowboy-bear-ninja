@@ -1,53 +1,51 @@
-<?php
-/*
-Template Name: Home
-*/
+<?php /* Template Name: Home */ ?>
 
-get_header(); ?>
-	
-	<main id="main" role="main">
-		<div id="recent-projects">
-			<div class="inner"><?php
-				while ( have_posts() ) : the_post();
-					the_content();
-				endwhile; ?>
-				<div id="portfolio" class="clearfix"><?php
-					query_posts( array( 'post_type' => 'portfolio', 'posts_per_page' => 6 ) );
-					while ( have_posts() ) : the_post();
-						get_template_part( 'content-portfolio' );
-					endwhile;
-					wp_reset_query(); ?>
-    			</div><?php
-				$tr_btn_title = ot_get_option( 'tr_home_button_title' );
-				$tr_btn_url = ot_get_option( 'tr_home_button_url' );
-    			if ( ! empty( $tr_btn_title ) ) echo '<a class="button" href="' . $tr_btn_url . '">' . $tr_btn_title . '</a>'; ?>
+<?php get_header(); ?>
+
+<div class="page-content">
+	<?php
+	while ( have_posts() ) : the_post();
+		get_template_part( 'content-page' );
+	endwhile;
+	?>
+
+	<div class="recent-projects">
+		<div class="inner">
+			<?php
+			$portfolio_query = new WP_Query( array( 'post_type' => 'project', 'posts_per_page' => 6 ) );
+			if ( $portfolio_query->have_posts() ) :
+				while ( $portfolio_query->have_posts() ) : $portfolio_query->the_post();
+					get_template_part( 'content-portfolio' );
+				endwhile;
+				wp_reset_postdata();
+			endif;
+			?>
+		</div>
+	</div>
+
+	<div class="recent-posts">
+		<div class="inner">
+			<div class="recent-posts-left">
+				<?php
+				$left_post_query = new WP_Query( array( 'post_type' => 'post', 'ignore_sticky_posts' => 1, 'posts_per_page' => 1 ) );
+				while ( $left_post_query->have_posts() ) : $left_post_query->the_post();
+					get_template_part( 'content' );
+				endwhile;
+				wp_reset_postdata();
+				?>
+			</div>
+
+			<div class="recent-posts-right">
+				<?php
+				$right_post_query = new WP_Query( array( 'post_type' => 'post', 'ignore_sticky_posts' => 1, 'offset' => 1, 'posts_per_page' => 3 ) );
+				while ( $right_post_query->have_posts() ) : $right_post_query->the_post();
+					get_template_part( 'content' );
+				endwhile;
+				wp_reset_postdata();
+				?>
 			</div>
 		</div>
-		<div id="recent-posts">
-			<div class="inner">
-				<div class="recent-posts-left"><?php
-					query_posts( array( 'post_type' => 'post', 'posts_per_page' => 1 ) );
-					while ( have_posts() ) : the_post(); ?>
-						<header class="entry-header">
-							<h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-							<div class="entry-meta"><?php the_time( 'M j, Y' ); ?> / <?php comments_popup_link(); ?></div>
-						</header><?php
-						the_excerpt();
-					endwhile;
-					wp_reset_query(); ?>
-				</div>
-				<div class="recent-posts-right"><?php
-					query_posts( array( 'post_type' => 'post', 'offset' => 1, 'posts_per_page' => 3 ) );
-					while ( have_posts() ) : the_post(); ?>
-						<header class="entry-header">
-							<h3 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-							<div class="entry-meta"><?php the_time( 'M j, Y' ); ?> / <?php comments_popup_link(); ?></div>
-						</header><?php
-					endwhile;
-					wp_reset_query(); ?>
-				</div>
-			</div>
-		</div>
-	</main>
+	</div>
+</div>
 
 <?php get_footer(); ?>

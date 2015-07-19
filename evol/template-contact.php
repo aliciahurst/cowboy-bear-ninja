@@ -1,96 +1,92 @@
-<?php
-/*
-Template Name: Contact
-*/
+<?php /* Template Name: Contact */
 
-$nameError = '';
-$emailError = '';
-$commentError = '';
-
-if ( isset( $_POST['submitted'] ) ) {
-	if ( trim( $_POST['contactName'] ) === '' ) {
-		$nameError = 'Please enter your name.';
+if ( isset( $_POST['submit'] ) ) {
+	if ( trim( $_POST['author'] ) === '' ) {
 		$hasError = true;
 	} else {
-		$name = trim( $_POST['contactName'] );
+		$author = trim( $_POST['author'] );
 	}
-	
+
 	if ( trim( $_POST['email'] ) === '' ) {
-		$emailError = 'Please enter your email address.';
 		$hasError = true;
-	} else if ( ! eregi( "^[A-Z0-9._%-]+@[A-Z0-9._%-]+\.[A-Z]{2,4}$", trim( $_POST['email'] ) ) ) {
-		$emailError = 'You entered an invalid email address.';
+	} else if ( !eregi( "^[A-Z0-9._%-]+@[A-Z0-9._%-]+\.[A-Z]{2,4}$", trim( $_POST['email'] ) ) ) {
 		$hasError = true;
 	} else {
 		$email = trim( $_POST['email'] );
 	}
-	
-	if ( trim( $_POST['comments'] ) === '' ) {
-		$commentError = 'Please enter a message.';
+
+	if ( trim( $_POST['subject'] ) === '' ) {
+		$hasError = true;
+	} else {
+		$subject = trim( $_POST['subject'] );
+	}
+
+	if ( trim( $_POST['message'] ) === '' ) {
 		$hasError = true;
 	} else {
 		if ( function_exists( 'stripslashes' ) ) {
-			$comments = stripslashes( trim($_POST['comments'] ) );
+			$message = stripslashes( trim($_POST['message'] ) );
 		} else {
-			$comments = trim( $_POST['comments'] );
+			$message = trim( $_POST['message'] );
 		}
 	}
-	
+
 	if ( ! isset( $hasError ) ) {
-		$emailTo = get_option( 'admin_email' );
-		
-		$subject = '[Contact Form] From '.$name;
-		$body = "Name: $name \n\nEmail: $email \n\nComments: $comments";
-		$headers = 'From: ' . $name . ' <' . $email . '>' . "\r\n" . 'Reply-To: ' . $email;
-		
-		mail( $emailTo, $subject, $body, $headers );
+		$site_name = get_bloginfo( 'name' );
+		$to = get_option( 'admin_email' );
+
+		$subject = '[' . $site_name . '] ' . $subject;
+		$message = "$message";
+		$headers = 'From: ' . $author . ' <' . $email . '>' . "\r\n" . 'Reply-To: ' . $email;
+
+		mail( $to, $subject, $message, $headers );
 		$emailSent = true;
 	}
 }
 
 get_header(); ?>
 
-	<main id="main">
-		<div class="inner">
-			<div id="primary" role="main">
-				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-					
-					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<?php the_content(); ?>
-						
-						<?php if ( isset( $emailSent ) && $emailSent == true ) { ?>
-							<p class="success"><?php _e( 'Thanks, your email was sent successfully.', 'themerain' ); ?></p>
-						<?php } else { ?>
-							
-							<?php if ( isset( $hasError ) || isset( $captchaError ) ) { ?>
-								<p class="error"><?php _e( 'Sorry, an error occurred.', 'themerain' ); ?><p>
-							<?php } ?>
-							
-							<form id="contact-form" action="<?php the_permalink(); ?>" method="post">
-								<p>
-									<label for="contactName"><?php _e( 'Name', 'themerain' ); ?> <span>*</span></label>
-									<input type="text" name="contactName" id="contactName" class="required requiredField" value="<?php if ( isset( $_POST['contactName'] ) ) echo $_POST['contactName']; ?>" />
-								</p>
-								
-								<p>
-									<label for="email"><?php _e( 'Email', 'themerain' ); ?> <span>*</span></label>
-									<input type="text" name="email" id="email" class="required requiredField email" value="<?php if ( isset( $_POST['email'] ) ) echo $_POST['email']; ?>" />
-								</p>
-								
-								<p>
-									<label for="commentsText"><?php _e( 'Message', 'themerain' ); ?> <span>*</span></label>
-									<textarea name="comments" id="commentsText" class="required requiredField" cols="45" rows="8"><?php if ( isset( $_POST['comments'] ) ) echo $_POST['comments']; ?></textarea>
-								</p>
-								
-								<input type="submit" name="submitted" id="submitted" value="<?php _e( 'Send Message', 'themerain' ); ?>" />
-							</form>
-						<?php } ?>
-					</article>
-					
-				<?php endwhile; endif; ?>
-			</div>
-			<?php get_sidebar(); ?>
-		</div>
-	</main>
+<div class="page-content">
+	<?php
+	while ( have_posts() ) : the_post();
+		get_template_part( 'content-page' );
+	endwhile;
+	?>
 
+	<div id="contact" class="contact-area">
+		<?php if ( isset( $emailSent ) && $emailSent == true ) { ?>
+			<p class="contact-form-success"><?php _e( 'Thanks, your email was sent successfully.', 'themerain' ); ?></p>
+		<?php } else { ?>
+
+			<?php if ( isset( $hasError ) ) { ?>
+				<p class="contact-form-error"><?php _e( 'Sorry, an error occurred.', 'themerain' ); ?></p>
+			<?php } ?>
+
+			<form action="<?php the_permalink(); ?>" method="post" id="contact-form" class="contact-form">
+				<p class="contact-form-author">
+					<input type="text" name="author" id="author" class="required" value="" placeholder="<?php _e( 'Name *', 'themerain' ); ?>" />
+				</p>
+
+				<p class="contact-form-email">
+					<input type="text" name="email" id="email" class="required email" value="" placeholder="<?php _e( 'Email *', 'themerain' ); ?>" />
+				</p>
+
+				<p class="contact-form-subject">
+					<input type="text" name="subject" id="subject" class="required" value="" placeholder="<?php _e( 'Subject *', 'themerain' ); ?>" />
+				</p>
+
+				<p class="contact-form-message">
+					<textarea name="message" id="message" class="required" cols="45" rows="8" placeholder="<?php _e( 'Message *', 'themerain' ); ?>"></textarea>
+				</p>
+
+				<p class="contact-form-submit">
+					<input type="submit" name="submit" value="<?php _e( 'Send Message', 'themerain' ); ?>" />
+				</p>
+			</form>
+
+		<?php } ?>
+	</div>
+</div>
+
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

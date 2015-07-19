@@ -1,20 +1,17 @@
-<?php
-/*
-Template Name: Full Width
-*/
+<?php /* Template Name: Full width */ ?>
 
-get_header(); ?>
+<?php get_header(); ?>
 
-	<main id="main">
-		<div class="inner">
-			<div id="primary" role="main">
-				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<?php the_content(); ?>
-					</article>
-				<?php endwhile; endif; ?>
-			</div>
-		</div>
-	</main>
+<div class="page-content">
+	<?php
+	while ( have_posts() ) : the_post();
+		get_template_part( 'content-page' );
+
+		if ( comments_open() || get_comments_number() ) {
+			comments_template();
+		}
+	endwhile;
+	?>
+</div>
 
 <?php get_footer(); ?>

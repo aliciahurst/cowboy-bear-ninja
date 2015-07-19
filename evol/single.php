@@ -1,15 +1,18 @@
 <?php get_header(); ?>
 
-	<main id="main">
-		<div class="inner">
-			<div id="primary" role="main"><?php 
-				if ( have_posts() ) : while ( have_posts() ) : the_post();
-					get_template_part( 'content' );
-					comments_template();
-				endwhile; endif; ?>
-			</div>
-			<?php get_sidebar(); ?>
-		</div>
-	</main>
+<div class="page-content">
+	<?php
+	while ( have_posts() ) : the_post();
+		get_template_part( 'content' );
 
+		rainy_post_nav();
+
+		if ( comments_open() || get_comments_number() ) {
+			comments_template();
+		}
+	endwhile;
+	?>
+</div>
+
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

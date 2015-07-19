@@ -1,15 +1,20 @@
-	<footer id="footer" role="contentinfo">
-		<?php $tr_footer_sidebar = ot_get_option( 'tr_footer_sidebar', 'yes' ); if ( $tr_footer_sidebar != 'no' ) { ?>
-			<div id="footer-sidebar">
-				<div class="inner">
-					<?php dynamic_sidebar( 'footer-sidebar' ); ?>
+		</main>
+
+		<footer class="site-footer" role="contentinfo">
+			<div class="inner">
+				<?php get_sidebar( 'footer' ); ?>
+
+				<div class="footer-column">
+					<?php echo wpautop( get_theme_mod( 'rainy_footer_first_column', '&copy; Copyright ' . date( 'Y ' ) . get_bloginfo( 'name' ) ) ); ?>
+				</div>
+
+				<div class="footer-column-last">
+					<?php echo wpautop( get_theme_mod( 'rainy_footer_second_column' ) ); ?>
 				</div>
 			</div>
-		<?php } ?>
-		<div class="inner copyright">
-			<?php echo wpautop( do_shortcode( ot_get_option( 'tr_footer_info' ) ) ); ?>
-		</div>
-	</footer>
+		</footer>
+	</div>
+
 	<?php wp_footer(); ?>
 </body>
 </html>

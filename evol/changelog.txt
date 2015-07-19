@@ -1,0 +1,18 @@
+Version 2.0.1 - 25 Dec 2014
+
+	* Added WP 4.1 compatibility
+	* Fixed some minor bugs
+
+Version 2.0 - 11 Dec 2014
+
+	* Major theme release – backup & update with caution!
+	* Completely new theme framework
+	* Updated all theme files
+	* Updated theme design
+	* Added Theme Customizer support (NEW)
+	* Added WordPress Gallery support (NEW)
+	* Added Contact template (NEW)
+
+Version 1.0 - 18 Dec 2013
+
+	* Initial release
