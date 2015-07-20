@@ -105,3 +105,8 @@ add_filter('auto_update_plugin', '__return_true');
 
 // Don't update WP with nightly builds
 add_filter( 'allow_dev_auto_core_updates', '__return_false' );
+
+// Add ACF options page
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page();
+}
