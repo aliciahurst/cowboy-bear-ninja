@@ -1,23 +1,8 @@
 <?php function evol_child_scripts() {
 
-    //wp_dequeue_style( 'magnific' );
-
-    //wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:400,700,600');
-    //wp_enqueue_style( 'googleFonts');
-
     wp_enqueue_style( 'evol-style', get_theme_root_uri() . '/evol/style.css' ); 
-
-    //wp_register_style( 'prefix-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css' );
-    //wp_enqueue_style( 'prefix-font-awesome');
-
+    wp_enqueue_style( 'custom-style', get_theme_root_uri() . '/evol-child/styles/css/main.css' ); 
     //wp_enqueue_style( 'ticketbook', get_theme_root_uri() . '/evol-child/stylesheets/fonts/ticketbook/stylesheet.css' ); 
-
-	//wp_enqueue_style( 'custom-style', get_theme_root_uri() . '/evol-child/stylesheets/css/style.css' ); 
-
-    //wp_dequeue_style( 'style' );
-
-   //wp_dequeue_style( 'magnific' );
-
 }
 add_action( 'wp_enqueue_scripts', 'evol_child_scripts', 11 );
 
