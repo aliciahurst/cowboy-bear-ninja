@@ -1,3 +1,60 @@
+@media all and (max-width: 500px) {
+  #text-6 span {
+    display: block; } }
+.page-header-bg img {
+  opacity: 1; }
 
+.logo-img img {
+  height: 50px; }
+
+.mailing-list {
+  background: #f3f3f3;
+  margin-top: 96px;
+  padding: 48px 0;
+  text-align: center;
+  vertical-align: middle; }
+  .mailing-list p, .mailing-list form {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0; }
+  .mailing-list p {
+    margin-right: 10px; }
+  .mailing-list p, .mailing-list input {
+    margin-bottom: 10px; }
+  .mailing-list .mc-email {
+    width: 300px;
+    border-bottom: 2px solid #313131;
+    margin-right: 5px; }
+    @media all and (max-width: 500px) {
+      .mailing-list .mc-email {
+        min-width: 200px; } }
+  .mailing-list .mc-submit {
+    padding: 12px 24px;
+    border: 2px solid #313131;
+    background: transparent;
+    color: #313131;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-bottom: 11px; }
+    .mailing-list .mc-submit:hover {
+      background-color: #313131;
+      color: #fff; }
+
+.site-footer {
+  margin-top: 0; }
+
+#text-8 i {
+  font-size: 20px; }
+
+@media all and (max-width: 500px) {
+  #text-6 span {
+    display: block; } }
+.project-thumbnail:hover {
+  opacity: 0.8; }
+  .project-thumbnail:hover img {
+    -webkit-transform: rotate(0) scale(1);
+    transform: rotate(0) scale(1); }
 
 /*# sourceMappingURL=main.css.map */

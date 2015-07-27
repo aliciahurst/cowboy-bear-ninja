@@ -3,6 +3,8 @@
     wp_enqueue_style( 'evol-style', get_theme_root_uri() . '/evol/style.css' ); 
     wp_enqueue_style( 'custom-style', get_theme_root_uri() . '/evol-child/styles/css/main.css' ); 
     //wp_enqueue_style( 'ticketbook', get_theme_root_uri() . '/evol-child/stylesheets/fonts/ticketbook/stylesheet.css' ); 
+    wp_enqueue_script( 'cowboy-custom-js', get_theme_root_uri() . '/evol-child/custom-scripts.js', array('jquery'), '1.0.0', true );
+
 }
 add_action( 'wp_enqueue_scripts', 'evol_child_scripts', 11 );
 
@@ -95,3 +97,16 @@ add_filter( 'allow_dev_auto_core_updates', '__return_false' );
 if( function_exists('acf_add_options_page') ) {
     acf_add_options_page();
 }
+
+// Post thumbnail caption
+function get_post_thumbnail_caption() {
+    if ( $thumb = get_post_thumbnail_id() )
+        return get_post( $thumb )->post_excerpt;
+}
+
+// Remove trailing slash 
+function permalink_untrailingslashit($link) {
+    return untrailingslashit($link);
+}
+add_filter('page_link', 'permalink_untrailingslashit');
+add_filter('post_type_link', 'permalink_untrailingslashit');
