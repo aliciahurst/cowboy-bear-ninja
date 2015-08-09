@@ -1,29 +1,6 @@
 <?php get_header(); ?>
 
-<div class="page-content">
-	<?php while ( have_posts() ) : the_post(); ?>
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-			<div class="post-content">
-
-
-
-				
-
-			<?php if( get_field('bio_text') ): ?>
-
-				<?php the_field('bio_text'); ?>
-
-			<?php endif; ?>
-
-		</div>
-
-	</article>
-
-	<?php rainy_team_nav(); endwhile; ?>
-
-</div>
-<div class="page-sidebar" role="complementary">
+	<div class="page-sidebar" role="complementary">
 	<aside class="widget">	
 		<?php if( get_field('bio_photo') ): ?>
 
@@ -57,5 +34,27 @@
 		</nav>
 	</aside>	
 </div>
+
+<div class="page-content">
+	<?php while ( have_posts() ) : the_post(); ?>
+
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+			<div class="post-content">
+
+			<?php if( get_field('bio_text') ): ?>
+
+				<?php the_field('bio_text'); ?>
+
+			<?php endif; ?>
+
+		</div>
+
+	</article>
+
+
+</div>
+
+<?php rainy_team_nav(); endwhile; ?>
 
 <?php get_footer(); ?>
