@@ -11,7 +11,7 @@
 
 				<div id="portfolio" class="portfolio-area">
 
-					<?php $args = array( 'numberposts' => 99, 'post_type' => 'team' ); $lastposts = get_posts( $args ); foreach($lastposts as $post) : setup_postdata($post); ?> 
+					<?php $args = array( 'numberposts' => 99, 'post_type' => 'team', 'orderby' => 'menu_order', 'order' => 'ASC' ); $lastposts = get_posts( $args ); foreach($lastposts as $post) : setup_postdata($post); ?> 
 					<article class="type-project">
 						<div class="project-thumbnail">
 							<?php if( get_field('bio_photo') ): ?>

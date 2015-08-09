@@ -47,7 +47,7 @@
 				<?php the_field('bio_text'); ?>
 
 			<?php endif; ?>
-
+			<?php the_content(); ?>
 		</div>
 
 	</article>
