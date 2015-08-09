@@ -20,6 +20,8 @@
   color: #000; }
   .logo_black a:hover {
     color: #505050; }
+.logo_black .site-navigation .current-menu-item > a {
+  color: #000; }
 .logo_black .page-title, .logo_black .page-subtitle {
   color: #000; }
 .logo_black .page-header .button {
@@ -76,6 +78,10 @@
 @media all and (max-width: 500px) {
   #text-6 span {
     display: block; } }
+.project-thumbnail h4 {
+  margin: 18px 0 6px 0; }
+.project-thumbnail p {
+  margin-bottom: 12px; }
 .project-thumbnail:hover {
   opacity: 0.8; }
   .project-thumbnail:hover img {
@@ -89,5 +95,14 @@
 
 .single-hidden .page-content {
   width: 100%; }
+
+.post-meta span:after {
+  content: ""; }
+
+.post-categories {
+  display: none; }
+
+.single-post .page-subtitle a {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,9 +1,18 @@
-.project-thumbnail:hover {
+
+.project-thumbnail {
+	h4 {
+		margin: 18px 0 6px 0;
+	}
+	p {
+		margin-bottom: 12px;
+	}
+	&:hover {
 	opacity: 0.8;
 	img {
 		-webkit-transform: rotate(0) scale(1);
 		transform: rotate(0) scale(1);
 	}
+}
 }
 
 .gallery-item .gallery-caption {

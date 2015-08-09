@@ -1,0 +1,16 @@
+.post-meta span:after {
+	content: "";
+}
+
+.post-categories {
+	display: none;
+}
+
+.single-post .page-subtitle {
+	&:before {
+		//content: " • ";
+	}
+	a {
+		display: none;
+	}
+}

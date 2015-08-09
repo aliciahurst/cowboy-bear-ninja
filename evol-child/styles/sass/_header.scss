@@ -30,6 +30,9 @@
 			color: #505050;
 		}
 	}
+	.site-navigation .current-menu-item > a {
+		color: $black;
+	}
 	.page-title, .page-subtitle {
 		color: $black;
 	}
