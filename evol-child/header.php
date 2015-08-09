@@ -9,12 +9,25 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php $headercolor = get_field('header_color', $post->ID); ?>
+
 	<div class="site">
-		<header class="site-header" role="banner">
+		<header class="site-header <?php echo $headercolor ?>" role="banner">
 			<div class="inner">
 				<div class="site-logo">
-						<a class="logo-img" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="/wordpress/wp-content/themes/evol-child/img/logo_white_text.png" /></a>
-					
+					<?php if ($headercolor): ?>
+					<a class="logo-img" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="/wordpress/wp-content/themes/evol-child/img/<?php echo $headercolor ?>_text.png" /></a>
+				<?php else: ?>
+				<a class="logo-img" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="/wordpress/wp-content/themes/evol-child/img/logo_white_text.png" /></a>
+			<?php endif; ?>
+				</div>
+
+				<div class="site-logo-mobile">
+					<?php if ($headercolor): ?>
+					<a class="logo-img" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="/wordpress/wp-content/themes/evol-child/img/<?php echo $headercolor ?>_notext.png" /></a>
+				<?php else: ?>
+				<a class="logo-img" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="/wordpress/wp-content/themes/evol-child/img/logo_white_notext.png" /></a>
+			<?php endif; ?>
 				</div>
 
 				<nav class="site-navigation" role="navigation">

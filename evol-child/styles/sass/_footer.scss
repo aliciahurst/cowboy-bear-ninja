@@ -22,6 +22,9 @@
 		@media all and (max-width: 500px) {
 			min-width: 200px;
 		}
+		&:focus {
+			background: #fff;
+		}
 	}
 	.mc-submit {
 		@include buttondk;

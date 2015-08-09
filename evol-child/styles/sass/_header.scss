@@ -5,3 +5,42 @@
 .logo-img img {
 	height: 50px;
 }
+
+.site-logo-mobile {
+	display: none;
+}
+
+.site-navigation .current-menu-item > a {
+	color: inherit;
+}
+
+@media screen and (max-width: 980px) {
+	.site-logo-mobile {
+		display: inline-block;
+	}
+	.site-logo {
+		display: none;
+	}
+}
+
+.logo_black {
+	a {
+		color: $black;
+		&:hover {
+			color: #505050;
+		}
+	}
+	.page-title, .page-subtitle {
+		color: $black;
+	}
+	.page-header .button {
+		border: 2px solid $black;
+		&:hover {
+			background: $black;
+			color: #505050;
+		}
+	}
+	.menu-toggle {
+		color: $black;
+	}
+}
