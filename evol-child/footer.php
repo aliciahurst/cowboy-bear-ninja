@@ -1,7 +1,7 @@
 		</main>
 		<section class="mailing-list">
 			<div class="inner">
-			<p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p> 
+			<p><?php the_field('footer_mailing_list_text', 'options'); ?></p> 
 			<form action="http://cowboybearninja.us5.list-manage.com/subscribe/post?u=ef6850663dc422328e11a6dcc&amp;id=c47b7b1036" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>	
 				<input type="email" value="" name="EMAIL" class="mc-email email" id="mce-EMAIL" placeholder="enter your email address" required>
 			    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
