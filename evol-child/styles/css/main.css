@@ -122,6 +122,13 @@
       margin-top: 0; } }
 .single-team .project-navigation, .single-directors .project-navigation {
   clear: both; }
+.single-team .video-header, .single-directors .video-header {
+  margin-top: 48px;
+  text-align: center; }
+.single-team #portfolio, .single-directors #portfolio {
+  margin-bottom: 48px; }
+.single-team h6, .single-directors h6 {
+  margin-top: 12px; }
 
 .bio-contact li a[href*="imdb"] .nav-meta span {
   display: none; }
@@ -163,5 +170,8 @@
     padding: 0 6px; }
 .page-template-template-about .mailing-list {
   margin-top: 0; }
+
+.fancybox-nav {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */

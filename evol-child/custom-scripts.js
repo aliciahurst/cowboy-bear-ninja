@@ -23,6 +23,7 @@ $(document).ready(function() {
     height    : '70%',
     autoSize  : false,
     closeClick  : false,
+    nextClick : false,
     openEffect  : 'none',
     closeEffect : 'none'
   });
