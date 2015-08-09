@@ -1,4 +1,10 @@
-<?php function evol_child_scripts() {
+<?php 
+
+// Add child theme meta-boxes
+require_once( get_stylesheet_directory() . '/meta-boxes-child.php' );
+
+// Add scripts and styles
+function evol_child_scripts() {
 
     wp_enqueue_style( 'evol-style', get_theme_root_uri() . '/evol/style.css' ); 
     wp_enqueue_style( 'custom-style', get_theme_root_uri() . '/evol-child/styles/css/main.css' ); 
@@ -58,8 +64,14 @@ add_action( 'init', 'tr_portfolio' );
 
 
 // Register a custom post type but don't do anything fancy
-register_post_type( 'hidden', array( 'label' => 'Hidden Pages', 'public' => true, 'capability_type' => 'post',  'show_ui' => true, 'query_var' => true, 'supports' => array( 'title', 'editor', 'thumbnail' ) ) );
 
+register_post_type( 'team', array( 'label' => 'Team', 'public' => true, 'capability_type' => 'post',  'hierarchical' => true, 'show_ui' => true, 'query_var' => true, 'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes') ) );
+
+register_post_type( 'directors', array( 'label' => 'Directors', 'public' => true, 'capability_type' => 'post',  'hierarchical' => true, 'show_ui' => true, 'query_var' => true, 'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes') ) );
+
+register_post_type( 'hidden', array( 'label' => 'Hidden Projects', 'public' => true, 'capability_type' => 'post',  'show_ui' => true, 'query_var' => true, 'supports' => array( 'title', 'editor', 'thumbnail' ) ) );
+
+register_post_type( 'old', array( 'label' => 'Unused Pages', 'public' => true, 'capability_type' => 'post',  'hierarchical' => true, 'show_ui' => true, 'query_var' => true, 'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes') ) );
 
 // Remove wp version param from any enqueued scripts
 function vc_remove_wp_ver_css_js( $src ) {
