@@ -14,7 +14,7 @@
 	<div class="site">
 		<header class="site-header <?php echo $headercolor ?>" role="banner">
 			<div class="inner">
-				<div class="site-logo">
+				<div class="site-logo logo-desktop">
 					<?php if ($headercolor): ?>
 					<a class="logo-img" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="/wordpress/wp-content/themes/evol-child/img/<?php echo $headercolor ?>_text.png" /></a>
 				<?php else: ?>
@@ -22,7 +22,7 @@
 			<?php endif; ?>
 				</div>
 
-				<div class="site-logo-mobile">
+				<div class="site-logo logo-mobile">
 					<?php if ($headercolor): ?>
 					<a class="logo-img" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="/wordpress/wp-content/themes/evol-child/img/<?php echo $headercolor ?>_notext.png" /></a>
 				<?php else: ?>

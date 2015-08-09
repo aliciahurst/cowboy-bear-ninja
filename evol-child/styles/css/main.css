@@ -4,17 +4,17 @@
 .logo-img img {
   height: 50px; }
 
-.site-logo-mobile {
+.logo-mobile {
   display: none; }
 
 .site-navigation .current-menu-item > a {
   color: inherit; }
 
 @media screen and (max-width: 980px) {
-  .site-logo-mobile {
+  .logo-mobile {
     display: inline-block; }
 
-  .site-logo {
+  .logo-desktop {
     display: none; } }
 .logo_black a {
   color: #000; }

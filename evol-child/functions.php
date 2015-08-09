@@ -9,10 +9,9 @@ function evol_child_scripts() {
     wp_enqueue_style( 'evol-style', get_theme_root_uri() . '/evol/style.css' ); 
     wp_enqueue_style( 'custom-style', get_theme_root_uri() . '/evol-child/styles/css/main.css' ); 
     wp_enqueue_style( 'fancybox-style', get_theme_root_uri() . '/evol-child/fancybox/source/jquery.fancybox.css' ); 
-    wp_deregister_script('jquery');
-    wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
-    wp_enqueue_script('jquery');
-    wp_dequeue_script('fancybox');
+    //wp_deregister_script('jquery');
+    wp_enqueue_script('jquery-2', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
+    //wp_dequeue_script('fancybox');
     //wp_enqueue_style( 'ticketbook', get_theme_root_uri() . '/evol-child/stylesheets/fonts/ticketbook/stylesheet.css' ); 
     wp_enqueue_script( 'fancybox-2', get_theme_root_uri() . '/evol-child/fancybox/source/jquery.fancybox.pack.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script( 'cowboy-custom-js', get_theme_root_uri() . '/evol-child/custom-scripts.js', array('jquery'), '1.0.0', true );

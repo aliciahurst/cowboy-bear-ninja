@@ -6,7 +6,7 @@
 	height: 50px;
 }
 
-.site-logo-mobile {
+.logo-mobile {
 	display: none;
 }
 
@@ -15,10 +15,10 @@
 }
 
 @media screen and (max-width: 980px) {
-	.site-logo-mobile {
+	.logo-mobile {
 		display: inline-block;
 	}
-	.site-logo {
+	.logo-desktop {
 		display: none;
 	}
 }
