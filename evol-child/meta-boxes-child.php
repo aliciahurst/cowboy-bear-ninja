@@ -191,3 +191,24 @@ function rainy_directors_meta_boxes() {
 	rainy_add_meta_box( $meta_box );
 }
 add_action( 'add_meta_boxes', 'rainy_directors_meta_boxes' );
+
+
+function rainy_team_nav() {
+	echo '<nav class="project-navigation" role="navigation">';
+		echo '<span class="project-navigation-left">';
+			if ( get_adjacent_post( false, '', true ) ) {
+				previous_post_link( '%link', __( '&larr; Previous Person', 'themerain' ) );
+			} else {
+				echo __( '&larr; Previous Person', 'themerain' );
+			};
+		echo '</span>';
+
+		echo '<span class="project-navigation-right">';
+			if ( get_adjacent_post( false, '', false ) ) {
+				next_post_link( '%link', __( 'Next Person &rarr;', 'themerain' ) );
+			} else {
+				echo __( 'Next Person &rarr;', 'themerain' );
+			};
+		echo '</span>';
+	echo '</nav>';
+}

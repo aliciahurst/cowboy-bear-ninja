@@ -1,0 +1,31 @@
+.single-hidden,
+//.single-team,
+.single-old,
+.single-directors
+{
+	.page-content {
+		width: 100%;
+	}
+}
+
+.single-team, .single.old {
+	.post-navigation {
+		display: block;
+		margin-top: 24px;
+	}
+	.post-navigation .nav-meta {
+		display: inline-block;
+		padding-left: 12px;
+	}
+}
+
+.bio-contact li a[href*="imdb"] {
+	.nav-meta {
+		span {
+			display: none;
+		}
+		&:after {
+			content: "IMDB";
+		}
+	}
+}
