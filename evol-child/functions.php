@@ -9,8 +9,8 @@ function evol_child_scripts() {
     wp_enqueue_style( 'evol-style', get_theme_root_uri() . '/evol/style.css' ); 
     wp_enqueue_style( 'custom-style', get_theme_root_uri() . '/evol-child/styles/css/main.css' ); 
     wp_enqueue_style( 'fancybox-style', get_theme_root_uri() . '/evol-child/fancybox/source/jquery.fancybox.css' ); 
-    //wp_deregister_script('jquery');
-    wp_enqueue_script('jquery-2', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
     //wp_dequeue_script('fancybox');
     //wp_enqueue_style( 'ticketbook', get_theme_root_uri() . '/evol-child/stylesheets/fonts/ticketbook/stylesheet.css' ); 
     wp_enqueue_script( 'fancybox-2', get_theme_root_uri() . '/evol-child/fancybox/source/jquery.fancybox.pack.js', array('jquery'), '1.0.0', true );
@@ -127,3 +127,7 @@ function permalink_untrailingslashit($link) {
 }
 add_filter('page_link', 'permalink_untrailingslashit');
 add_filter('post_type_link', 'permalink_untrailingslashit');
+
+// Remove emojis 
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
