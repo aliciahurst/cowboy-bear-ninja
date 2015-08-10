@@ -1,3 +1,26 @@
+/////// HOME
+/////////////////
+
+.recent-projects-container {
+	background: #f3f3f3;
+	margin-top: 96px;
+	padding: 96px 0 48px;
+}
+
+.home .mailing-list {
+	background: $white;
+	margin-top: 0;
+	.email {
+		background: $white;
+		&:focus {
+			background: #f3f3f3;
+		}
+	}
+}
+
+/////////////////
+
+
 .single-hidden,
 .single-old,
 .page-template-template-about
@@ -60,6 +83,7 @@
 	margin-top: 24px;
 	a {
 		@include buttondk;
+		white-space: nowrap;
 	}
 }
 
@@ -91,4 +115,11 @@
 
 .fancybox-nav {
 	display: none;
+}
+
+.twocolumn
+ {
+	-webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+          page-break-inside: avoid; /* Firefox */
+               break-inside: avoid; /* IE 10+ */        
 }

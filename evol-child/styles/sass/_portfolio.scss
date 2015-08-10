@@ -20,3 +20,38 @@
 	-webkit-transform: translateY(0px);
 	transform: translateY(0px);
 }
+
+.intro {
+	width: 48%;
+	float: left;
+}
+
+.whatwedid {
+	list-style-type: none;
+	margin: 0;
+	float: left;
+	li {
+		//display: inline-block;
+	}
+}
+
+.credits {
+	list-style-type: none;
+	margin: 0;
+	.credits-role {
+		font-weight: bold;
+		padding-right: 2px;
+	}
+}
+
+.intro-divs {
+	&:after {
+		clear: both;
+		content: "";
+	display: table;
+	}
+}
+
+.single-project .type-project.has-post-content {
+	margin-bottom: 0;
+}

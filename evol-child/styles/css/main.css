@@ -93,6 +93,30 @@
   -webkit-transform: translateY(0px);
   transform: translateY(0px); }
 
+.intro {
+  width: 48%;
+  float: left; }
+
+.whatwedid {
+  list-style-type: none;
+  margin: 0;
+  float: left; }
+
+.credits {
+  list-style-type: none;
+  margin: 0; }
+  .credits .credits-role {
+    font-weight: bold;
+    padding-right: 2px; }
+
+.intro-divs:after {
+  clear: both;
+  content: "";
+  display: table; }
+
+.single-project .type-project.has-post-content {
+  margin-bottom: 0; }
+
 .post-meta span:after {
   content: ""; }
 
@@ -101,6 +125,19 @@
 
 .single-post .page-subtitle a {
   display: none; }
+
+.recent-projects-container {
+  background: #f3f3f3;
+  margin-top: 96px;
+  padding: 96px 0 48px; }
+
+.home .mailing-list {
+  background: #fff;
+  margin-top: 0; }
+  .home .mailing-list .email {
+    background: #fff; }
+    .home .mailing-list .email:focus {
+      background: #f3f3f3; }
 
 .single-hidden .page-content,
 .single-old .page-content,
@@ -148,7 +185,8 @@
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 2px;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    white-space: nowrap; }
     .more-button a:hover {
       background-color: #313131;
       color: #fff; }
@@ -173,5 +211,45 @@
 
 .fancybox-nav {
   display: none; }
+
+.twocolumn {
+  -webkit-column-break-inside: avoid;
+  /* Chrome, Safari, Opera */
+  page-break-inside: avoid;
+  /* Firefox */
+  break-inside: avoid;
+  /* IE 10+ */ }
+
+.half {
+  width: 50%; }
+
+.one-third {
+  float: left;
+  width: 23%;
+  margin: 0 35px 35px 0; }
+  @media screen and (max-width: 1250px) {
+    .one-third {
+      width: 300px;
+      margin-right: 20px; } }
+  @media screen and (max-width: 980px) {
+    .one-third {
+      width: 354px; } }
+
+.two-third {
+  float: left;
+  width: 800px; }
+  @media screen and (max-width: 1250px) {
+    .two-third {
+      width: 620px; } }
+  @media screen and (max-width: 980px) {
+    .two-third {
+      float: none;
+      width: 100%; } }
+
+.first {
+  float: left; }
+
+.last {
+  float: right; }
 
 /*# sourceMappingURL=main.css.map */
