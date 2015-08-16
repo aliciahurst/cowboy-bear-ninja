@@ -71,13 +71,13 @@ add_action( 'init', 'tr_portfolio' );
 
 // Register a custom post type but don't do anything fancy
 
-register_post_type( 'hidden', array( 'label' => 'Hidden Projects', 'public' => true, 'capability_type' => 'post', 'show_ui' => true, 'query_var' => true, 'supports' => array( 'title', 'editor', 'thumbnail' ) ) );
+register_post_type( 'hidden', array( 'label' => 'Hidden Projects', 'public' => true, 'capability_type' => 'post', 'show_ui' => true, 'query_var' => true, 'supports' => array( 'title', 'editor', 'author', 'thumbnail' ) ) );
 
-register_post_type( 'team', array( 'label' => 'Team', 'public' => true, 'capability_type' => 'post',  'hierarchical' => true, 'show_ui' => true, 'query_var' => true, 'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes') ) );
+register_post_type( 'team', array( 'label' => 'Team', 'public' => true, 'capability_type' => 'post',  'hierarchical' => true, 'show_ui' => true, 'query_var' => true, 'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'page-attributes') ) );
 
-register_post_type( 'directors', array( 'label' => 'Directors', 'public' => true, 'capability_type' => 'post',  'hierarchical' => true, 'show_ui' => true, 'query_var' => true, 'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes') ) );
+register_post_type( 'directors', array( 'label' => 'Directors', 'public' => true, 'capability_type' => 'post',  'hierarchical' => true, 'show_ui' => true, 'query_var' => true, 'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'page-attributes') ) );
 
-register_post_type( 'old', array( 'label' => 'Unused Pages', 'public' => true, 'capability_type' => 'post',  'hierarchical' => true, 'show_ui' => true, 'query_var' => true, 'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes') ) );
+register_post_type( 'old', array( 'label' => 'Unused Pages', 'public' => true, 'capability_type' => 'post',  'hierarchical' => true, 'show_ui' => true, 'query_var' => true, 'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'page-attributes') ) );
 
 // Remove wp version param from any enqueued scripts
 function vc_remove_wp_ver_css_js( $src ) {
@@ -128,6 +128,17 @@ $uri = get_theme_root_uri();
     }
 }
 add_action( 'wp_head' , 'public_favicon' );
+
+// Add Project author support
+
+function allowAuthorEditing()
+{
+  add_post_type_support( 'project', 'author' );
+}
+
+add_action('init','allowAuthorEditing');
+
+
 
 // Auto update plugins
 add_filter('auto_update_plugin', '__return_true');
