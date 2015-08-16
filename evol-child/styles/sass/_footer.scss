@@ -20,6 +20,11 @@
 		width: 300px;
 		border-bottom: 2px solid #313131;
 		margin-right: 5px;
+		@media all and (max-width: 775px) {
+			margin-right: 0;
+			display: block;
+			text-align: center;
+		}
 		@media all and (max-width: 500px) {
 			min-width: 200px;
 		}

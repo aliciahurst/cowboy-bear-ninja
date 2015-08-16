@@ -45,5 +45,9 @@
 	}
 	.menu-toggle {
 		color: $black;
+		background: $lightgray;
+	}
+	.site-navigation .nav-menu.toggled-on {
+		background: $lightgray;
 	}
 }
