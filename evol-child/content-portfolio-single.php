@@ -1,8 +1,8 @@
 <div class="post-content">
 	<div class="intro-divs columns">
 		<!-- INTRO -->
-		<div class="column-item columns-2">
-			<?php the_field('intro_text'); ?>
+		<div class="column-item columns-2 intro-text">
+			<p><?php the_field('intro_text'); ?> <strong> &mdash; <?php echo get_the_author_meta( 'first_name' ); ?></strong></p>
 		</div>
 
 		<!-- WHAT WE DID -->
@@ -43,6 +43,7 @@
 		</ul>
 	</div>
 <?php endif; ?>
+
 </div>
 <?php the_content(); ?>
 

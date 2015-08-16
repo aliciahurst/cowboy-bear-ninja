@@ -78,7 +78,8 @@
       color: #fff; }
 
 .site-footer {
-  margin-top: 0; }
+  margin-top: 0;
+  overflow-x: hidden; }
 
 #text-8 i {
   font-size: 20px; }
@@ -101,9 +102,9 @@
   -webkit-transform: translateY(0px);
   transform: translateY(0px); }
 
-.intro {
-  width: 48%;
-  float: left; }
+@media all and (min-width: 1000px) {
+  .intro-text {
+    padding-right: 24px; } }
 
 .whatwedid {
   list-style-type: none;
@@ -124,6 +125,49 @@
 
 .single-project .type-project.has-post-content {
   margin-bottom: 0; }
+
+article .project-navigation {
+  display: none; }
+
+.project-navigation {
+  clear: both;
+  float: left;
+  width: 100%;
+  display: block; }
+
+.whatwedid li {
+  position: relative;
+  display: inline-block;
+  margin: 2px 4px 2px 10px;
+  padding: 0 10px;
+  border-radius: 0 3px 3px 0;
+  background-color: #888;
+  color: #fff;
+  font-size: 12px;
+  line-height: 28px;
+  letter-spacing: 2px;
+  text-transform: uppercase; }
+
+.whatwedid li:before {
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-top: 14px solid transparent;
+  border-right: 10px solid #888;
+  border-bottom: 14px solid transparent;
+  content: ""; }
+
+.whatwedid li:after {
+  position: absolute;
+  top: 12px;
+  left: -2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #fff;
+  content: ""; }
 
 .post-meta span:after {
   content: ""; }
@@ -262,7 +306,8 @@
 
 .columns {
   width: -webkit-calc(100% - -20px);
-  width: calc(100% - -20px); }
+  width: calc(100% - -20px);
+  margin-bottom: 48px; }
 
 .column-item {
   float: left;
