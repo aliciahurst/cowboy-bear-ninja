@@ -1,13 +1,13 @@
 <div class="post-content">
-	<div class="intro-divs">
-
-		<div class="intro">
+	<div class="intro-divs columns">
+		<!-- INTRO -->
+		<div class="column-item columns-2">
 			<?php the_field('intro_text'); ?>
 		</div>
 
 		<!-- WHAT WE DID -->
 		<?php if( have_rows('what_we_did') ): ?> 
-			<div class="one-third">
+			<div class="column-item columns-4">
 				<h4>What We Did</h4>
 				<ul class="whatwedid">
 					<?php while( have_rows('what_we_did') ): the_row(); 
@@ -23,7 +23,7 @@
 
 	<!-- CREDITS -->
 	<?php if( have_rows('credits') ): ?> 
-		<div class="one-third">
+		<div class="column-item columns-4">
 			<h4>Credits</h4>
 			<ul class="credits">
 				<?php while( have_rows('credits') ): the_row(); 
