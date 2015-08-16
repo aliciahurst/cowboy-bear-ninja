@@ -50,7 +50,7 @@ function tr_portfolio() {
         'query_var' => true,
         'capability_type' => 'post',
         'hierarchical' => false,
-        'menu_position' => 4,
+        
         'rewrite' => array( 'slug' => 'portfolio-item' ),
         'supports' => array( 'title', 'editor', 'thumbnail' )
     );
@@ -71,11 +71,11 @@ add_action( 'init', 'tr_portfolio' );
 
 // Register a custom post type but don't do anything fancy
 
+register_post_type( 'hidden', array( 'label' => 'Hidden Projects', 'public' => true, 'capability_type' => 'post', 'show_ui' => true, 'query_var' => true, 'supports' => array( 'title', 'editor', 'thumbnail' ) ) );
+
 register_post_type( 'team', array( 'label' => 'Team', 'public' => true, 'capability_type' => 'post',  'hierarchical' => true, 'show_ui' => true, 'query_var' => true, 'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes') ) );
 
 register_post_type( 'directors', array( 'label' => 'Directors', 'public' => true, 'capability_type' => 'post',  'hierarchical' => true, 'show_ui' => true, 'query_var' => true, 'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes') ) );
-
-register_post_type( 'hidden', array( 'label' => 'Hidden Projects', 'public' => true, 'capability_type' => 'post',  'show_ui' => true, 'query_var' => true, 'supports' => array( 'title', 'editor', 'thumbnail' ) ) );
 
 register_post_type( 'old', array( 'label' => 'Unused Pages', 'public' => true, 'capability_type' => 'post',  'hierarchical' => true, 'show_ui' => true, 'query_var' => true, 'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes') ) );
 
@@ -94,16 +94,40 @@ function show_favicon() {
 $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 $uri = get_theme_root_uri();
     if (strpos($url,'staging') !== false) {
-        echo '<link href="'. $uri .'/evol-child/images/favicon_staging.png" rel="icon" type="image/png">';
+        echo '<link href="'. $uri .'/evol-child/img/favicon_staging.png" rel="icon" type="image/png">';
     } 
     elseif (strpos($url,'dev') !== false) {
-        echo '<link href="'. $uri .'/evol-child/images/favicon_local.png" rel="icon" type="image/png">';
+        echo '<link href="'. $uri .'/evol-child/img/favicon_local.png" rel="icon" type="image/png">';
     } 
     else {
-        echo '<link href="'. $uri .'/evol-child/images/favicon_live.png" rel="icon" type="image/png">';
+        echo '<link href="'. $uri .'/evol-child/img/favicon_live.png" rel="icon" type="image/png">';
     }
 }
 add_action('admin_head', 'show_favicon');
+
+// Remove rainy favicons
+
+function child_remove_parent_function() {
+    remove_action( 'wp_head' , array( 'Rainy_Customize' , 'rainy_favicon' ) );
+}
+add_action( 'wp_loaded', 'child_remove_parent_function' );
+
+// Add public favicons
+
+function public_favicon() {
+$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+$uri = get_theme_root_uri();
+    if (strpos($url,'staging') !== false) {
+        echo '<link href="'. $uri .'/evol-child/img/favicon_staging.png" rel="icon" type="image/png">';
+    } 
+    elseif (strpos($url,'dev') !== false) {
+        echo '<link href="'. $uri .'/evol-child/img/favicon_local.png" rel="icon" type="image/png">';
+    } 
+    else {
+        echo '<link href="'. $uri .'/evol-child/img/favicon.png" rel="icon" type="image/png">';
+    }
+}
+add_action( 'wp_head' , 'public_favicon' );
 
 // Auto update plugins
 add_filter('auto_update_plugin', '__return_true');
