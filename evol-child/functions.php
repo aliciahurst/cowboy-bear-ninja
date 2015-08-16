@@ -7,6 +7,7 @@ require_once( get_stylesheet_directory() . '/meta-boxes-child.php' );
 function evol_child_scripts() {
 
     wp_enqueue_style( 'evol-style', get_theme_root_uri() . '/evol/style.css' ); 
+    wp_dequeue_style ('style');
     wp_enqueue_style( 'custom-style', get_theme_root_uri() . '/evol-child/styles/css/main.css' ); 
     wp_enqueue_style( 'fancybox-style', get_theme_root_uri() . '/evol-child/fancybox/source/jquery.fancybox.css' ); 
     wp_deregister_script('jquery');
